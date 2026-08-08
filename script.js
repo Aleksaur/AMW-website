@@ -1,11 +1,17 @@
 function scrollToForm() {
-    document.getElementById("booking").scrollIntoView({
-        behavior: "smooth"
-    });
+    var bookingSection = document.getElementById("booking");
+    if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: "smooth" });
+    }
 }
 
-document.getElementById("booking-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Спасибо! Ваша заявка отправлена. AMW скоро свяжется с вами.");
-    this.reset();
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector("form");
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Спасибо! Ваша заявка отправлена. AMW скоро свяжется с вами.");
+            form.reset();
+        });
+    }
 });
