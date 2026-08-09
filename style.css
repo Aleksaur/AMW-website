@@ -415,109 +415,76 @@ footer {
   border-radius: 10px;
 }
 
-
-
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 900px) {
-
     .process {
-
         grid-template-columns: 1fr 1fr;
-
     }
-
 
     .process::before {
-
         display: none;
-
     }
-
 
     .slideshow {
-
-        height: 450px;
-
+        height: 400px; /* Reduced slightly for smaller screens */
+        width: 100vw;
+        max-width: 100%;
+        border-radius: 0; /* Ensures edge-to-edge look */
     }
-
 
     .slide-caption {
-
         left: 30px;
-
         right: 30px;
-
         bottom: 65px;
-
     }
-
 
     .slide-caption h3 {
-
         font-size: 32px;
-
     }
-
 }
-
 
 @media (max-width: 600px) {
-
     .process {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .process-step {
-
         padding: 25px;
-
     }
-
 
     .slideshow {
-
-        height: 420px;
-
-        border-radius: 15px;
-
+        height: 320px; /* Keeps image ratio balanced on small mobile phones */
+        width: 100vw;
+        max-width: 100%;
+        border-radius: 0; /* Enforces zero border-radius */
     }
-
 
     .slide-caption {
-
         left: 25px;
-
         bottom: 65px;
-
     }
-
 
     .slide-caption h3 {
-
         font-size: 27px;
-
     }
-
 
     .slide-caption p {
-
         font-size: 14px;
-
     }
-
 
     .slide-arrow {
-
         width: 42px;
-
         height: 42px;
-
+        /* Optional: position closer to edge if needed */
+        margin: 0 -10px; 
     }
-
+    
+    .slide-dots {
+        bottom: 15px; /* Moves dots closer to bottom on tiny screens */
+    }
 }
+
+
