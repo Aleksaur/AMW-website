@@ -195,17 +195,24 @@ footer {
         margin: 0 10px;
     }
 }
+
 /* =========================
    AMW PROCESS
 ========================= */
 
 .process-section {
-    background: #0166B1;
+    background: #1282D2; /* Lighter blue background */
+    color: white; /* Default text color to white */
+    padding: 60px 20px;
+}
+
+.process-section h2 {
+    color: white; /* Section title contrast */
 }
 
 .process {
     max-width: 1150px;
-    margin: 50px auto 0;
+    margin: 40px auto 0;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -219,7 +226,6 @@ footer {
 /* Connecting line */
 
 .process::before {
-
     content: "";
 
     position: absolute;
@@ -230,19 +236,18 @@ footer {
 
     height: 2px;
 
-    background: #d9e4ec;
+    background: rgba(255, 255, 255, 0.3); /* Soft line matching white theme */
 
     z-index: 0;
 }
 
 
 .process-step {
-
     background: white;
 
-    padding: 30px 25px;
+    padding: 20px 16px; /* Reduced padding to make cards smaller */
 
-    border-radius: 18px;
+    border-radius: 14px;
 
     border: 1px solid #e5e7eb;
 
@@ -257,19 +262,16 @@ footer {
 
 
 .process-step:hover {
-
     transform: translateY(-8px);
 
     box-shadow:
         0 20px 40px rgba(0,0,0,.10);
-
 }
 
 
 .process-number {
-
-    width: 70px;
-    height: 70px;
+    width: 36px;  /* Smaller circle size */
+    height: 36px; /* Smaller circle size */
 
     border-radius: 50%;
 
@@ -277,47 +279,42 @@ footer {
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 20px;
+    margin: 0 0 12px 0; /* Aligned to the top left corner */
 
     background: #0879d1;
 
     color: white;
 
-    font-size: 18px;
+    font-size: 14px; /* Scaled down font size */
 
     font-weight: 800;
 
-    border: 6px solid #f5f7fa;
+    border: 2px solid #f5f7fa; /* Thinner border for smaller size */
 }
 
 
 .process-icon {
+    font-size: 26px; /* Scaled icon down slightly to fit smaller card */
 
-    font-size: 32px;
-
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 
 .process-step h3 {
+    font-size: 18px; /* Slightly smaller heading for card scale */
 
-    font-size: 22px;
+    margin-bottom: 8px;
 
-    margin-bottom: 10px;
-
+    color: #1f2937; /* Dark text inside the white card for contrast */
 }
 
 
 .process-step p {
+    color: #6b7280; /* Readable dark grey text inside white card */
 
-    color: #6b7280;
+    font-size: 13px;
 
-    font-size: 14px;
-
-}
-
-14px;
-
+    line-height: 1.5;
 }
 
 /* ========================= AMW SLIDESHOW ========================= */
@@ -421,7 +418,8 @@ footer {
 
 @media (max-width: 900px) {
     .process {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px; /* Adds breathing room on sides */
     }
 
     .process::before {
@@ -429,62 +427,75 @@ footer {
     }
 
     .slideshow {
-        height: 400px; /* Reduced slightly for smaller screens */
-        width: 100vw;
+        height: 400px;
+        width: 100%; /* Changed from 100vw to prevent horizontal scroll bugs */
         max-width: 100%;
-        border-radius: 0; /* Ensures edge-to-edge look */
+        border-radius: 0;
+        touch-action: pan-y; /* Allows vertical scrolling while intercepting horizontal swipes */
     }
 
     .slide-caption {
-        left: 30px;
-        right: 30px;
-        bottom: 65px;
+        left: 20px;
+        right: 20px;
+        bottom: 50px;
     }
 
     .slide-caption h3 {
-        font-size: 32px;
+        font-size: 28px;
     }
 }
 
 @media (max-width: 600px) {
     .process {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column stack for phones */
+        gap: 15px;
     }
 
     .process-step {
-        padding: 25px;
+        padding: 16px 14px; /* Matches your compact card desktop styling */
     }
 
     .slideshow {
-        height: 320px; /* Keeps image ratio balanced on small mobile phones */
-        width: 100vw;
+        height: 320px;
+        width: 100%;
         max-width: 100%;
-        border-radius: 0; /* Enforces zero border-radius */
+        border-radius: 0;
     }
 
     .slide-caption {
-        left: 25px;
-        bottom: 65px;
+        left: 15px;
+        right: 15px;
+        bottom: 45px;
     }
 
     .slide-caption h3 {
-        font-size: 27px;
+        font-size: 22px;
     }
 
     .slide-caption p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .slide-arrow {
-        width: 42px;
-        height: 42px;
-        /* Optional: position closer to edge if needed */
-        margin: 0 -10px; 
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        /* Ensure easy touch targets on small screens */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+
+    .slide-arrow.prev { left: 10px; }
+    .slide-arrow.next { right: 10px; }
     
     .slide-dots {
-        bottom: 15px; /* Moves dots closer to bottom on tiny screens */
+        bottom: 15px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        margin: 0 4px; /* Touch-friendly spacing */
     }
 }
-
-
