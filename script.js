@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 showSlide(index);
                 startAutoPlay(); // Reset timer on manual interaction
             });
-        }
+        });
 
         // Initialize active states and kickstart automated timing
         showSlide(currentIndex);
